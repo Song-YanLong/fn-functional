@@ -3,7 +3,7 @@
   "version": "0.0.5",
   "description": "js常用函数",
   "main": "dist/main.js",
-  "types": "dist/type/index.d.ts",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode=production --node-env=production",
