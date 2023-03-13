@@ -1,4 +1,8 @@
-import { getUrlParamsType, trurnUrlParams } from "../type/type";
+export interface trurnUrlParams {
+  [key: string]: string;
+}
+
+export type getUrlParamsType = (url?: string) => trurnUrlParams | undefined;
 /**
  * 获取url地址中的参数
  * @param url url地址

@@ -1,10 +1,6 @@
-import { getUrlParams as UrlParams } from "./fn/getUrlParams";
+import { getUrlParams } from "./fn/getUrlParams";
 
-export const getUrlParams = UrlParams;
-
-module.exports = {
-  getUrlParams,
-};
+export { getUrlParams };
 
 export default {
   getUrlParams,
