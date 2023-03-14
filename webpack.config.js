@@ -2,6 +2,7 @@
 
 const path = require('path');
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 const isProduction = process.env.NODE_ENV == 'production';
 
@@ -42,22 +43,23 @@ const config = {
                     { loader: 'ts-loader' }
                 ]
             },
-            {
-                test: /\.less$/i,
-                use: [stylesHandler, 'css-loader', 'less-loader'],
-            },
-            {
-                test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
-                type: 'asset',
-            },
-
-            // Add your rules for custom modules here
-            // Learn more about loaders from https://webpack.js.org/loaders/
         ],
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.jsx', '.js', '...'],
     },
+    // optimization: {
+    //     minimize: true,
+    //     minimizer: [
+    //         new TerserPlugin({
+    //             minify: TerserPlugin.uglifyJsMinify,
+    //             include: /\.min\.js$/,
+    //             terserOptions: {
+    //                 sourceMap: true,
+    //             },
+    //         }),
+    //     ],
+    // },
 };
 
 module.exports = () => {

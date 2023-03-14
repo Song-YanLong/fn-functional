@@ -8,7 +8,9 @@ interface trurnUrlParams {
  * @returns
  */
 
-export const getUrlParams: (url?: string) => trurnUrlParams | undefined = (url) => {
+export const getUrlParams: (url?: string) => trurnUrlParams | undefined = (
+  url
+) => {
   const URL = url ?? location.href;
   let params: trurnUrlParams = {};
   if (!URL || typeof URL !== "string")
@@ -22,6 +24,6 @@ export const getUrlParams: (url?: string) => trurnUrlParams | undefined = (url) 
   return params ?? undefined;
 };
 
-export default {
-  getUrlParams,
-};
+const fn_functional = { getUrlParams };
+
+export default fn_functional;
